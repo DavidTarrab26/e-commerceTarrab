@@ -1,0 +1,15 @@
+
+.logoNav{
+    width: 20%;
+}
+.textLogo{
+    font-size: 10px;
+    margin-left: 5px;
+}
+.contBotones{
+    width: 70%;
+    margin-right: 10%;
+}
+.radiusBotones{
+    border-radius: 10px;
+}
