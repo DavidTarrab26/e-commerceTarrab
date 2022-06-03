@@ -3,7 +3,7 @@ import './ItemCount.css';
 
 const ItemCount = ({listaDeProd, inicia, onAdd}) => {
     
-    const stock = listaDeProd[0].stock
+    const stock = listaDeProd.stock
     const [count, setCount] = useState(inicia)
     
     useEffect(() => {
