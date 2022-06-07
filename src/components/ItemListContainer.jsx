@@ -27,13 +27,13 @@ const ItemListContainer = ({}) => {
             setTimeout(()=>{
                 res([
                     {id: 1, img: 'jeanChupin.jpg', title: 'Jean chupin', precio: 1500, detalle: 'jean chupin, pegado al cuerpo, un corte moderno, el largo es hasta los tobillos', talle: 's', stock: 20},
-                    {id: 2, img: 'jeanChupin.jpg', title: 'Jean ancho', precio: 2500, detalle: 'jean ancho abajo, el corte se va abriendo a medida', talle: 'm', stock: 17},
-                    {id: 3, img: 'jeanChupin.jpg', title: 'Jean corto', precio: 1700, detalle: 'jean corto, una bermuda clasica de jean, excelente para el verano y elegante', talle: 'l', stock: 25},
+                    {id: 2, img: 'jeanAncho.jpg', title: 'Jean ancho', precio: 2500, detalle: 'jean ancho abajo, el corte se va abriendo a medida', talle: 'm', stock: 17},
+                    {id: 3, img: 'jeanCorto.jpg', title: 'Jean corto', precio: 1700, detalle: 'jean corto, una bermuda clasica de jean, excelente para el verano y elegante', talle: 'l', stock: 25},
                     {id: 4, img: 'jeanChupin.jpg', title: 'Jean sin bolsillos', precio: 1200, detalle: 'jean chupin sin bolsillos traseros, un estilo nuevo y unico', talle: 's', stock: 15},
-                    {id: 5, img: 'jeanChupin.jpg', title: 'Jean cortado', precio: 2300, detalle: 'jean chupin cortado en las rodillas, corte moderno y muy lindo visualmente', talle: 's', stock: 6},
-                    {id: 6, img: 'jeanChupin.jpg', title: 'Jean sin costuras', precio: 1500, detalle: 'jean ancho sin costuras en sus terminaciones de los tobillos', talle: 'm', stock: 2},
-                    {id: 7, img: 'jeanChupin.jpg', title: 'Jean con botones', precio: 2500, detalle: 'jean chupin con botones', talle: 'm', stock: 23},
-                    {id: 8, img: 'jeanChupin.jpg', title: 'Jean con botones dorados', precio: 2500, detalle: 'jean chupin con botones dorados', talle: 'xl', stock: 14}
+                    {id: 5, img: 'jeanCortado.jpg', title: 'Jean cortado', precio: 2300, detalle: 'jean chupin cortado en las rodillas, corte moderno y muy lindo visualmente', talle: 's', stock: 6},
+                    {id: 6, img: 'jeanSinCostura.jpg', title: 'Jean sin costuras', precio: 1500, detalle: 'jean ancho sin costuras en sus terminaciones de los tobillos', talle: 'm', stock: 2},
+                    {id: 7, img: 'jeanBotones.jpg', title: 'Jean con botones', precio: 2500, detalle: 'jean chupin con botones', talle: 'm', stock: 23},
+                    {id: 8, img: 'jeanBotonesDorados.jpg', title: 'Jean con botones dorados', precio: 2500, detalle: 'jean chupin con botones dorados', talle: 'xl', stock: 14}
                 ]);
             }, 2000);
         });

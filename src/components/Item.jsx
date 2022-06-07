@@ -1,11 +1,12 @@
 import React from "react";
+import './Item.css'
 
 
-const Item = ({id, title, talle, stock, img}) => {
+const Item = ({title, talle, stock, img}) => {
     return ( 
         <>
-        <div className="card text-center" style={{width: '18rem'}}>
-            <img src={require(`../assets/${img}`)} className="card-img-top" alt="..."/>
+        <div className="card text-center cardItem">
+            <img src={require(`../assets/${img}`)} className="card-img-top imgItem" alt={title}/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">talle: {talle}</p>

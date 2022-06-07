@@ -19,7 +19,7 @@ const ItemList = ({productos}) => {
                     title={producto.title} 
                     talle={producto.talle} 
                     stock={producto.stock}
-                    img={producto.img} 
+                    img={producto.img}
                 />
             </div>
         ))}
