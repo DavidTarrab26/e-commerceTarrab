@@ -2,7 +2,7 @@ import React from "react";
 import './Item.css'
 
 
-const Item = ({title, talle, stock, img}) => {
+const Item = ({title, talle, stock, precio, img}) => {
     return ( 
         <>
         <div className="card text-center cardItem">
@@ -11,6 +11,7 @@ const Item = ({title, talle, stock, img}) => {
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">talle: {talle}</p>
                 <a href="#" className="btn btn-primary">Ver detalle</a>
+                <h5 className="mt-2">${precio}</h5>
             </div>
             <p>stock: {stock}</p>
         </div>
