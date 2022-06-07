@@ -6,10 +6,13 @@ const ItemList = ({productos}) => {
     return ( 
     <>
         {productos.length == 0 ?
-        <div className="d-flex justify-content-center mt-5">
-            <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+        <div>
+            <div className="d-flex justify-content-center mt-5">
+                <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+                </div>
             </div>
+            <h2 className="text-center">Loading...</h2>
         </div>
         :
         <div className="d-flex flex-wrap justify-content-between">
