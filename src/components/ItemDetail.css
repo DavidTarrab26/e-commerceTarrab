@@ -1,0 +1,19 @@
+.imgDetail{
+    width: 20%;
+}
+.contenedorDetail{
+    margin-top: 5%;
+}
+.conTextDetail{
+    width: 30%;
+    padding-left: 30px;
+}
+.precioDetail{
+    height: 15%;
+}
+.stockDetail{
+    margin-right: 5px;
+}
+.btnComprar{
+    margin-right: 10px;
+}
