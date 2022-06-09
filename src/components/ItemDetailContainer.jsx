@@ -43,7 +43,7 @@ const ItemDetailContainer = () => {
 
     return ( 
         <div>
-           <ItemDetail item ={resultado}/>
+           <ItemDetail items ={resultado}/>
         </div>
      );
 }
