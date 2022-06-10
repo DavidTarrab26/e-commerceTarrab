@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ItemDetail.css"
 
 
-const ItemDetail = ({items}) => {
-    
-    const [itemElegido, setItemElegido] = useState()
-    const [itemFiltrado, setItemFiltrado] = useState([])
-
-    useEffect(()=>{
-        setItemElegido(items.find(item => item.id === 1))
-        setItemFiltrado(items.filter(item => item.id !== 1))
-    },[items])
+const ItemDetail = ({itemElegido, itemFiltrado}) => {
 
 
     return ( 
@@ -27,7 +19,7 @@ const ItemDetail = ({items}) => {
             : 
             <div>
                 <div className="d-flex justify-content-center contenedorDetail">
-                    <img src={require(`../assets/${itemElegido.img}`)} className="imgDetail shadow" alt={itemElegido.title}/>
+                    <img src={require(`../../assets/${itemElegido.img}`)} className="imgDetail shadow" alt={itemElegido.title}/>
                     <div className="conTextDetail shadow">
                         <h2 className="mt-2">{itemElegido.title}</h2>
                         <p className="mt-5">{itemElegido.detalle}</p>
@@ -48,7 +40,7 @@ const ItemDetail = ({items}) => {
                 <div className="d-flex flex-wrap">
                     {itemFiltrado.map(itemF => (
                         <div className="card m-4 shadow cardItemF" key={itemF.id}>
-                            <img src={require(`../assets/${itemF.img}`)} className="card-img-top cardImgF" alt={itemF.title}/>
+                            <img src={require(`../../assets/${itemF.img}`)} className="card-img-top cardImgF" alt={itemF.title}/>
                             <div className="card-body">
                                 <h5 className="card-title">{itemF.title}</h5>
                                 <p className="card-text">{itemF.detalle}</p>
@@ -60,7 +52,6 @@ const ItemDetail = ({items}) => {
                 </div>
             </div>
             }
-            {/*  */}
         </div>
      );
 }
