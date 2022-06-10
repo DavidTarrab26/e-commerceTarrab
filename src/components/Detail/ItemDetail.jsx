@@ -45,7 +45,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                             <div className="card-body">
                                 <h5 className="card-title">{itemF.title}</h5>
                                 <p className="card-text">{itemF.detalle}</p>
-                                <Link to={`detalle/${itemF.id}`} className="btn btn-primary">Ver mas</Link>
+                                <Link to={`/detalle/${itemF.id}`} className="btn btn-primary">Ver mas</Link>
                             </div>
                         </div>
                     ))}
