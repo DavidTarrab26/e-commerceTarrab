@@ -13,12 +13,12 @@ const NavBar = () => {
             </div>
             <div className="d-flex justify-content-end contBotones">
                 <div>
-                    <button className="btn btn-light radiusBotones">Inicio</button>
+                    <Link to={'/'}><button className="btn btn-light radiusBotones">Inicio</button></Link>
                 </div>
                 <div className="container-fluid d-flex justify-content-center">
-                    <Link className="navbar-brand text-black " to={'/category'}>Camisas</Link>
-                    <Link className="navbar-brand text-black " to={'/'}>Pantalones</Link>
-                    <Link className="navbar-brand text-black " to={'/category'}>Shorts</Link>    
+                    <Link className="navbar-brand text-black " to={'/category/remeras'}>Remeras</Link>
+                    <Link className="navbar-brand text-black " to={'/category/pantalones'}>Pantalones</Link>
+                    <Link className="navbar-brand text-black " to={'/category/camisas'}>Camisas</Link>    
                 </div>
                 <div>
                     <button type="button" className="btn btn-light radiusBotones">Login</button>

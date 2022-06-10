@@ -48,7 +48,8 @@ const ItemDetailContainer = () => {
         itemDetail
             .then((result)=>{
                 setItemElegido(result.find(item => item.id == id))
-                setItemFiltrado(result.filter(item => item.id !== 1));
+                //ver esta linea dps
+                setItemFiltrado(result.filter(item => item.id != id));
             })
             .catch((error)=>{
                 setError(true);
@@ -59,13 +60,7 @@ const ItemDetailContainer = () => {
             })
 
     },[]);
-    console.log(itemElegido)
     
-    useEffect(()=>{
-    },[itemElegido])
-
-    
-
     return ( 
         <div>
            <ItemDetail itemElegido ={itemElegido} itemFiltrado={itemFiltrado} />

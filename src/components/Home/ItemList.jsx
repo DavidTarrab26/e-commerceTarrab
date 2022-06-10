@@ -3,6 +3,7 @@ import Item from "./Item";
 
 
 const ItemList = ({productos}) => {
+
     return ( 
     <>
         {productos.length == 0 ?
@@ -15,6 +16,7 @@ const ItemList = ({productos}) => {
             <h2 className="text-center">Loading...</h2>
         </div>
         :
+        <>
         <div className="d-flex flex-wrap justify-content-between">
         {productos.map(producto =>(
             <div className="m-4 shadow" key={producto.id}>
@@ -29,6 +31,7 @@ const ItemList = ({productos}) => {
             </div>
         ))}
         </div>
+        </>
         }
     </> 
     );

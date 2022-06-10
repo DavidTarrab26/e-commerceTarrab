@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Category from './components/Category';
 import ItemDetailContainer from './components/Detail/ItemDetailContainer';
-import ItemListContainer from './components/Home/ItemListContainer';
+import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/Home/ItemListContainer';
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/' element={<ItemListContainer />} />
-          <Route path='/detalle/:id' element={<ItemDetailContainer />} />
-          <Route path='/category/:params' element={<ItemListContainer />}/>
+          <Route exact path='/' element={<ItemListContainer />} />
+          <Route exact path='/category/:id' element={<ItemListContainer />}/>
+          <Route exact path='/detalle/:id' element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
     </div>

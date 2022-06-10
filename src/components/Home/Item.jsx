@@ -4,6 +4,8 @@ import './Item.css'
 
 
 const Item = ({title, talle, stock, precio, img, id}) => {
+
+    
     return ( 
         <>
         <div className="card text-center cardItem">
