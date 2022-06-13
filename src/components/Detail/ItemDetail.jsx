@@ -1,10 +1,18 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 
 
 const ItemDetail = ({itemElegido, itemFiltrado}) => {
+    const [loading, setLoading] = useState(false)
 
+    const cambiarLoading = () =>{
+        setLoading(true)
+        setTimeout(()=>{setLoading(false)},2500)
+    }
+    
 
     return ( 
         <div>
@@ -18,11 +26,21 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                 <h2 className="text-center">Loading...</h2>
             </div>
             : 
+            loading == true ?
+            <div>
+                <div className="d-flex justify-content-center mt-5">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <h2 className="text-center">Loading...</h2>
+            </div>
+            :
             <div>
                 <div className="d-flex justify-content-center contenedorDetail">
                     <img src={require(`../../assets/${itemElegido.img}`)} className="imgDetail shadow" alt={itemElegido.title}/>
                     <div className="conTextDetail shadow">
-                        <h2 className="mt-2">{itemElegido.title}</h2>
+                        <h2 className="mt-5">{itemElegido.title}</h2>
                         <p className="mt-5">{itemElegido.detalle}</p>
                         <p className="mt-5">Talles : {itemElegido.talle}</p>
                         <div className="d-flex align-items-end precioDetail">
@@ -44,8 +62,8 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                             <img src={require(`../../assets/${itemF.img}`)} className="card-img-top cardImgF" alt={itemF.title}/>
                             <div className="card-body">
                                 <h5 className="card-title">{itemF.title}</h5>
-                                <p className="card-text">{itemF.detalle}</p>
-                                <Link to={`/detalle/${itemF.id}`} className="btn btn-primary">Ver mas</Link>
+                                <p className="card-text">{itemF.detalle}</p>    
+                                <Link to={`/detalle/${itemF.id}`}><button className="btn btn-primary" onClick={()=>cambiarLoading()}>Ver mas</button></Link>
                             </div>
                         </div>
                     ))}

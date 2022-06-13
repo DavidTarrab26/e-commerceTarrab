@@ -1,0 +1,19 @@
+.slide{
+    height: 520px;
+    background-color: rgb(227, 227, 230);
+    margin-bottom: 100px;
+}
+.textSlide{
+    font-size: 70px;
+
+}
+.contTextSlide{
+    margin-top: 150px;
+    margin-left: 100px;
+}
+.ftoSlide{
+    height: 520px;
+}
+.contTextNew{
+    margin-top: 150px;
+}
