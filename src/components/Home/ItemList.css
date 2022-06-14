@@ -9,11 +9,25 @@
 }
 .contTextSlide{
     margin-top: 150px;
-    margin-left: 100px;
 }
 .ftoSlide{
     height: 520px;
 }
 .contTextNew{
     margin-top: 150px;
+}
+.titleCate{
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 40px 0px;
+    border-bottom: 2px solid black;
+}
+.contenedorItem{
+    margin-left: 70px;
+}
+.titleProd{
+    font-size: 70px;
+    width: 1200px;
+    margin-bottom: 100px;
+    border-bottom: 4px solid black ;
 }

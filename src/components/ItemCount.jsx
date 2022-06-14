@@ -11,6 +11,16 @@ const ItemCount = ({listaDeProd, inicia, onAdd}) => {
             alert(`no hay mas stock, solo quedan ${count}.`)
         }
     },[count])
+    //Desafio clase 5
+    /* const [carrito, setCarrito] = useState(0)
+
+    const producto = [
+        {prod: 'pantalon', modelo: 'chupin', talle: 's', stock: 20},
+    ]
+
+    const onAdd = (cantidad) => {
+        setCarrito(cantidad)
+    } */
 
     
 
@@ -35,6 +45,10 @@ const ItemCount = ({listaDeProd, inicia, onAdd}) => {
             <div className="d-flex justify-content-center">
                 <button className="btn btn-success mt-3" onClick={()=>{onAdd(count)}}>Agregar al carrito</button>
             </div>
+            {/* <h5 className="text-center mt-4 mb-4">Tu pedido es de {carrito} producto</h5>
+            <div>
+                <ItemCount listaDeProd = {producto} inicia = {1} onAdd = {onAdd}/>
+            </div> */}
         </>
      );
 }

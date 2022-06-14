@@ -26,4 +26,8 @@
 }
 .sugerencia{
     margin-top: 5%;
+    margin-bottom: 30px;
+}
+.titleSugerencia{
+    height: 100px;
 }

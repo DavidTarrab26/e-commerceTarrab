@@ -10,10 +10,9 @@ const Item = ({title, talle, stock, precio, img, id}) => {
         <>
         <div className="card text-center cardItem">
             <img src={require(`../../assets/${img}`)} className="card-img-top imgItem" alt={title}/>
-            <div className="card-body">
+            <div className="card-body bodyCard">
                 <h5 className="card-title">{title}</h5>
-                <p className="card-text">talle: {talle}</p>
-                <Link to={`/detalle/${id}`}><button className="btn btn-primary">Ver detalle</button></Link>
+                <Link to={`/detalle/${id}`}><button className="btn btn-dark">Ver detalle</button></Link>
                 <h5 className="mt-2">${precio}</h5>
             </div>
             <p>stock: {stock}</p>

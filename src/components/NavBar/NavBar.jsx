@@ -6,7 +6,7 @@ import './NavBar.css'
 
 const NavBar = () => {
     return ( 
-        <nav className="navbar nav container-fluid d-flex flex-nowrap">
+        <nav className="navbar nav container-fluid d-flex flex-nowrap shadow">
             <div>
                 <Link to={'/'}><img src={logo} alt="logo" className= 'logoNav' /></Link>
                 <h2 className= 'textLogo' >Ecommerce</h2>
