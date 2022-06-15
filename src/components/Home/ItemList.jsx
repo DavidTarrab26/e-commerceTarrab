@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Item from "./Item";
 import './ItemList.css';
-import fotoSlide from '../../assets/remeraSlide.png'
+import FotoSlide from '../../assets/remeraSlide.png'
 
 
 const ItemList = ({productos, loading, loadingCat, home}) => {
@@ -28,7 +28,7 @@ const ItemList = ({productos, loading, loadingCat, home}) => {
                     <h3 className="textSlide text-center">TARRAB</h3>
                     <h3 className="textSlide">E-COMMERCE</h3>
                     </div>
-                    <img src={fotoSlide} className="ftoSlide" />
+                    <img src={FotoSlide} className="ftoSlide" />
                     <div className="text-center contTextNew">
                         <h4>NEW ARRIVALS</h4>
                         <p>100% Algodon</p>
@@ -40,7 +40,7 @@ const ItemList = ({productos, loading, loadingCat, home}) => {
             </div>
             <div className="container-fluid">
                 <div className="d-flex justify-content-center ">
-                    <h3 className="text-center titleProd">TODOS NUESTROS PRODUCTOS</h3>
+                    <h3 className="text-center titleProd">TODOS NUESTROS PRODUCTOS </h3>
                 </div>
                 <div className="d-flex flex-wrap justify-content-center">
                     {productos.map(producto =>(
