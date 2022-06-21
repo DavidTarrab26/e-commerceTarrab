@@ -1,11 +1,14 @@
 import React from "react"; 
+import { useContext } from "react";
+import { MiContexto } from "../../context/CartContext";
 import './CartWidget.css'
 
 const CartWidget = () => {
+    const {carrito} = useContext(MiContexto)
     return ( 
         <div className="d-flex cart-text">
             <i className="bi bi-cart"></i>
-            <p>2</p>
+            <p>{carrito.length}</p>
         </div>
      );
 }

@@ -1,11 +1,13 @@
 import React from "react";
-import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { MiContexto } from "../../context/CartContext";
 import "./ItemDetail.css"
 
 
 const ItemDetail = ({itemElegido, itemFiltrado}) => {
+    const {onAdd} = useContext(MiContexto)
     const [loading, setLoading] = useState(false)
 
     const cambiarLoading = () =>{
@@ -48,7 +50,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                         </div>
                         <div className="d-flex justify-content-center ">
                             <button type="button" className="btn btn-dark btnComprar">Comprar Ahora</button>
-                            <button type="button" className="btn btn-outline-dark">Agregar al carrito</button>
+                            <button type="button" className="btn btn-outline-dark" onClick={()=>onAdd(itemElegido, itemElegido.precio)}>Agregar al carrito</button>
                         </div>
                         <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                     </div>

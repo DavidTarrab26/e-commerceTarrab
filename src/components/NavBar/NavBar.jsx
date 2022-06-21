@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../../logo.svg';
-import CartWidget from '../CartWidget';
+import CartWidget from './CartWidget';
 import './NavBar.css'
 
 const NavBar = () => {
@@ -25,7 +25,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="d-flex justify-content-end">
-                <CartWidget />
+                <Link className="text-black" to={'/cart'}><CartWidget /></Link>
             </div>
         </nav>
      );
