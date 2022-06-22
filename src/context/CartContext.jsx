@@ -13,8 +13,20 @@ const CartContext = ({children}) => {
         setPrecios(precio + precios)
     }
 
+    const remove = (id) =>{
+        setCarrito(carrito.filter(car=>car.id !== id))
+    }
+
+    const clear = () =>{
+        setCarrito([])
+    }
+
+    const isInCart = () =>{
+        
+    }
+
     return ( 
-        <MiContexto.Provider value={{carrito, precios, onAdd}}>
+        <MiContexto.Provider value={{carrito, precios, onAdd, remove, clear}}>
             {children}
         </MiContexto.Provider>
      );
