@@ -1,54 +1,38 @@
 import React, { useEffect, useState } from "react";
 import './ItemCount.css';
 
-const ItemCount = ({listaDeProd, inicia, onAdd}) => {
+const ItemCount = ({stock, cantidad}) => {
     
-    const stock = listaDeProd.stock
-    const [count, setCount] = useState(inicia)
-    
+    const [count, setCount] = useState(cantidad)
+    console.log(cantidad + 1)
     useEffect(() => {
         if (stock == count){
             alert(`no hay mas stock, solo quedan ${count}.`)
         }
     },[count])
-    //Desafio clase 5
-    /* const [carrito, setCarrito] = useState(0)
-
-    const producto = [
-        {prod: 'pantalon', modelo: 'chupin', talle: 's', stock: 20},
-    ]
-
-    const onAdd = (cantidad) => {
-        setCarrito(cantidad)
-    } */
-
-    
 
     return ( 
         <>
+            <h5>Cantidad:</h5>
             <div className="d-flex justify-content-center">
                 <div className="itemCount d-flex justify-content-center contenedor">
-                    {
-                    count !== inicia? 
-                    <button className="btn btn-outline-primary" onClick={()=>{setCount(count -1)}}>-</button>
+                    {/* {
+                        count !== 0? 
+                        <button className="btn btn-outline-primary" onClick={()=>{setCount(cantidad -1)}}>-</button>
                         :
-                    <button className="btn btn-outline-primary" disabled="disabled">-</button>
-                    }
+                        <button className="btn btn-outline-primary" disabled="disabled">-</button>
+                    } */}
                     <h2 className="prodInicial">{count}</h2>
-                    {count !== stock ? 
+                    {/* {count !== stock ? 
                     <button className="btn btn-outline-primary" onClick={()=>{setCount(count +1)}}>+</button>
                     :
                     <button className="btn btn-outline-primary" disabled="disabled">+</button>
-                    }
+                    } */}
                 </div>
             </div>
             <div className="d-flex justify-content-center">
-                <button className="btn btn-success mt-3" onClick={()=>{onAdd(count)}}>Agregar al carrito</button>
+                {/* <button className="btn btn-success mt-3" onClick={()=>{onAdd()}}>Agregar cantidad</button> */}
             </div>
-            {/* <h5 className="text-center mt-4 mb-4">Tu pedido es de {carrito} producto</h5>
-            <div>
-                <ItemCount listaDeProd = {producto} inicia = {1} onAdd = {onAdd}/>
-            </div> */}
         </>
      );
 }
