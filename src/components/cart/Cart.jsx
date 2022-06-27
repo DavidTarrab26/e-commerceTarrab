@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext} from "react";
+import { Link } from "react-router-dom";
 import { MiContexto } from "../../context/CartContext";
 import ItemCount from "../ItemCount";
 import "./Cart.css"
 
 const Cart = () => {
-    const {carrito, precios, remove, clear} = useContext(MiContexto)
+    const {carrito, precios, remove, clear, precioDelItem} = useContext(MiContexto)
     return ( 
         <>
             {carrito.length > 0 ?
@@ -20,22 +21,22 @@ const Cart = () => {
                                 </div>
                                 <div>
                                     <ItemCount stock={producto.stock} cantidad={producto.cantidad}/>
-                                    <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.precio, producto.id)}>Eliminar Producto</button>
+                                    <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.precio, producto.id, producto.cantidad)}>Eliminar Producto</button>
                                 </div>
-                                <p>stock: {producto.stock}</p>
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="text-center"> 
                     <h5>Total: ${precios}</h5>
-                    <button type="button" className="btn btn-success">Comprar</button>
+                    <button type="button" className="btn btn-success">Finalizar Comprar</button>
                     <button type="button" className="btn btn-danger" onClick={()=>clear()}>Eliminar Todo!</button>
                 </div>
             </div>
             :
-            <div>
+            <div className="text-center">
                 <h3>Agrega productos al carrito</h3>
+                <Link to={"/"}><button className="btn btn-dark">Volver al Home</button></Link>
             </div>
             }
         </>

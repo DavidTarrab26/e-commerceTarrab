@@ -4,11 +4,11 @@ import { MiContexto } from "../../context/CartContext";
 import './CartWidget.css'
 
 const CartWidget = () => {
-    const {carrito} = useContext(MiContexto)
+    const {cantidadTotal} = useContext(MiContexto)
     return ( 
         <div className="d-flex cart-text">
             <i className="bi bi-cart"></i>
-            <p>{carrito.length}</p>
+            <p>{cantidadTotal}</p>
         </div>
      );
 }

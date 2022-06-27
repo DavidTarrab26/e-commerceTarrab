@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import './ItemCount.css';
 
 const ItemCount = ({stock, cantidad}) => {
-    
-    const [count, setCount] = useState(cantidad)
-    console.log(cantidad + 1)
+
     useEffect(() => {
-        if (stock == count){
-            alert(`no hay mas stock, solo quedan ${count}.`)
+        if (stock == cantidad){
+            alert(`no hay mas stock, solo quedan ${stock}.`)
         }
-    },[count])
+    },[cantidad])
 
     return ( 
         <>
-            <h5>Cantidad:</h5>
+            <h6>Cantidad:</h6>
             <div className="d-flex justify-content-center">
                 <div className="itemCount d-flex justify-content-center contenedor">
                     {/* {
@@ -22,7 +20,7 @@ const ItemCount = ({stock, cantidad}) => {
                         :
                         <button className="btn btn-outline-primary" disabled="disabled">-</button>
                     } */}
-                    <h2 className="prodInicial">{count}</h2>
+                    <h4 className="prodInicial">{cantidad}</h4>
                     {/* {count !== stock ? 
                     <button className="btn btn-outline-primary" onClick={()=>{setCount(count +1)}}>+</button>
                     :

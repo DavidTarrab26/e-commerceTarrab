@@ -1,10 +1,14 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MiContexto } from "../../context/CartContext";
 import logo from '../../logo.svg';
 import CartWidget from './CartWidget';
 import './NavBar.css'
 
 const NavBar = () => {
+    const {carrito} = useContext(MiContexto)
+
     return ( 
         <nav className="navbar nav container-fluid d-flex flex-nowrap shadow">
             <div>
@@ -24,9 +28,13 @@ const NavBar = () => {
                     <button type="button" className="btn btn-dark radiusBotones">Login</button>
                 </div>
             </div>
+            {carrito.length > 0 ?
             <div className="d-flex justify-content-end">
                 <Link className="text-black" to={'/cart'}><CartWidget /></Link>
             </div>
+            :
+            ""
+            }
         </nav>
      );
 }
