@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { productos } from "../../assets/productos";
 import ItemList from "./ItemList";
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 const ItemListContainer = () => {
@@ -14,31 +15,36 @@ const ItemListContainer = () => {
     const [home, setHome] = useState(true)
     
     
-    const productosList = new Promise((res, rej) =>{
-        res(productos);
-    });
     useEffect(()=>{
-            productosList
-            .then((result)=>{
-                if (id) {
-                    setResultado(result.filter(resul => resul.category == id));
-                    setLoadingCat(true)
-                    setTimeout(()=>{setLoadingCat(false)},2000)
-                    setHome(false)
-                }else{
-                    setResultado(result)
-                    setLoadingCat(true)
-                    setTimeout(()=>{setLoadingCat(false)},2000)
-                    setHome(true)
-                }
+        const db = getFirestore()
+
+        const productosCollection = collection(db, 'productos')
+
+        if (id) {
+            const q = query(productosCollection, where('category', '==', id))
+            getDocs(q).then(snapshot=>{
+                setResultado(snapshot.docs.map(doc=>({...doc.data(), id: doc.id})))
             })
-            .catch((error)=>{
-                setError(true);
-                console.log(error);
+            .catch(error=>{
+                setError(error)
             })
             .finally(()=>{
                 setLoading(false)
+                setHome(false)
             })
+        }else{
+            getDocs(productosCollection).then(snapshot=>{
+                setResultado(snapshot.docs.map(doc=>({...doc.data(), id: doc.id})))
+            })
+            .catch(error=>{
+                setError(error)
+            })
+            .finally(()=>{
+                setLoading(false)
+                setHome(true)
+            })
+        }
+            
         },[id]);
 
     return ( 

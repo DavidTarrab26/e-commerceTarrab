@@ -56,7 +56,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="sugerencia d-flex justify-content-center">
+                    {/* <div className="sugerencia d-flex justify-content-center">
                         <h3>Quienes vieron este producto tambien compraron</h3>
                     </div>
                     <div className="d-flex flex-wrap justify-content-center">
@@ -74,7 +74,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                             </div>
                         ))}
                         
-                    </div>
+                    </div> */}
                 </div>
             </div>
             }
