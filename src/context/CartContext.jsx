@@ -9,7 +9,6 @@ const CartContext = ({children}) => {
     const [precios, setPrecios] = useState(0)
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [precioDelItem, setPrecioDelItem] = useState(0)
-    console.log(carrito)
     
     const addItem = (item, precio) =>{
         const index = carrito.findIndex(prod =>prod.id === item.id)

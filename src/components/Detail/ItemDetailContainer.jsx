@@ -19,8 +19,10 @@ const ItemDetailContainer = () => {
         const db = getFirestore()
 
         const productRef = doc(db, 'producto', id)
+        console.log(id)
 
-        getDoc(productRef).then(snapshot=>{
+        getDoc(productRef)
+        .then(snapshot=>{
             setItemElegido({ ...snapshot.data(), id: snapshot.id })
         })
         .catch(error=>{
