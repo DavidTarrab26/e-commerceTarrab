@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../../assets/productos";
 import ItemList from "./ItemList";
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 const ItemListContainer = () => {
@@ -11,7 +10,6 @@ const ItemListContainer = () => {
     const [resultado, setResultado] = useState([])
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
-    const [loadingCat, setLoadingCat] = useState(false)
     const [home, setHome] = useState(true)
     
     
@@ -49,7 +47,7 @@ const ItemListContainer = () => {
 
     return ( 
         <>
-            <ItemList productos={resultado} loading={loading} loadingCat={loadingCat} home={home} />
+            <ItemList productos={resultado} loading={loading} home={home} />
         </>
      );
 }

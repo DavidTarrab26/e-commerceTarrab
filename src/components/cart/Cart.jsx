@@ -1,11 +1,11 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../../context/CartContext";
 import ItemCount from "../ItemCount";
-import "./Cart.css"
+import "./Cart.css";
 
 const Cart = () => {
-    const {carrito, precios, remove, clear, precioDelItem} = useContext(MiContexto)
+    const {carrito, precios, remove, clear} = useContext(MiContexto)
     return ( 
         <>
             {carrito.length > 0 ?
@@ -14,7 +14,7 @@ const Cart = () => {
                     {carrito.map(producto =>(
                         <div className="shadow m-3" key={producto.id}>
                             <div className="card text-center cardItem">
-                                <img src={require(`../../assets/${producto.img}`)} className="card-img-top imgItem" alt={producto.title}/>
+                                <img src={producto.img} className="card-img-top imgItem" alt={producto.title}/>
                                 <div className="card-body bodyCard">
                                     <h5 className="card-title">{producto.title}</h5>
                                     <h5 className="mt-2">${producto.precio}</h5>

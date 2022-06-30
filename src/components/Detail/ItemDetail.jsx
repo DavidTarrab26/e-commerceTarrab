@@ -6,29 +6,12 @@ import { MiContexto } from "../../context/CartContext";
 import "./ItemDetail.css"
 
 
-const ItemDetail = ({itemElegido, itemFiltrado}) => {
+const ItemDetail = ({itemElegido, itemFiltrado, loading}) => {
     const {addItem} = useContext(MiContexto)
-    const [loading, setLoading] = useState(false)
-
-    const cambiarLoading = () =>{
-        setLoading(true)
-        setTimeout(()=>{setLoading(false)},2500)
-    }
-    
 
     return ( 
         <div>
-            {itemElegido === undefined? 
-                <div>
-                    <div className="d-flex justify-content-center mt-5">
-                        <div className="spinner-border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                    <h2 className="text-center">Loading...</h2>
-                </div>
-                : 
-                loading == true ?
+            {loading == true ?
                 <div>
                     <div className="d-flex justify-content-center mt-5">
                         <div className="spinner-border" role="status">
@@ -40,7 +23,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                 :
                 <div>
                     <div className="d-flex justify-content-center contenedorDetail">
-                        <img src={require(`../../assets/${itemElegido.img}`)} className="imgDetail shadow" alt={itemElegido.title}/>
+                        <img src={itemElegido.img} className="imgDetail shadow" alt={itemElegido.title}/>
                         <div className="conTextDetail shadow">
                             <h2 className="mt-5">{itemElegido.title}</h2>
                             <p className="mt-5">{itemElegido.detalle}</p>
@@ -55,7 +38,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                             <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                         </div>
                     </div>
-                    <div className="container">
+                    {/* <div className="container">
                         <div className="sugerencia d-flex justify-content-center">
                             <h3>Quienes vieron este producto tambien compraron</h3>
                         </div>
@@ -75,7 +58,7 @@ const ItemDetail = ({itemElegido, itemFiltrado}) => {
                             ))}
                             
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             }
         </div>

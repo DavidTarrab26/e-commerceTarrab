@@ -9,7 +9,7 @@ const Item = ({title, stock, precio, img, id}) => {
     return ( 
         <>
         <div className="card text-center cardItem">
-            <img src={require(`../../assets/${img}`)} className="card-img-top imgItem" alt={title}/>
+            <img src={img} className="card-img-top imgItem" alt={title}/>
             <div className="card-body bodyCard">
                 <h5 className="card-title">{title}</h5>
                 <Link to={`/detalle/${id}`}><button className="btn btn-dark">Ver detalle</button></Link>

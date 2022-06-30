@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../../assets/productos";
 import ItemDetail from "./ItemDetail";
 import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
@@ -18,7 +17,7 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         const db = getFirestore()
 
-        const productRef = doc(db, 'producto', id)
+        const productRef = doc(db, 'productos', id)
         console.log(id)
 
         getDoc(productRef)
@@ -35,7 +34,7 @@ const ItemDetailContainer = () => {
     
     return ( 
         <div>
-           <ItemDetail itemElegido ={itemElegido} itemFiltrado={itemFiltrado} />
+           <ItemDetail itemElegido ={itemElegido} itemFiltrado={itemFiltrado} loading={loading} />
         </div>
      );
 }

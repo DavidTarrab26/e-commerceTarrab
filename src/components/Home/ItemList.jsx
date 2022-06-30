@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Item from "./Item";
 import './ItemList.css';
-import FotoSlide from '../../assets/remeraSlide.png'
 
 
-const ItemList = ({productos, loading, loadingCat, home}) => {
+const ItemList = ({productos, loading, home}) => {
 
 
     return ( 
     <>
-        {loading || loadingCat == true?
+        {loading == true?
         <div>
             <div className="d-flex justify-content-center mt-5">
                 <div className="spinner-border" role="status">
@@ -28,7 +27,7 @@ const ItemList = ({productos, loading, loadingCat, home}) => {
                     <h3 className="textSlide text-center">TARRAB</h3>
                     <h3 className="textSlide">E-COMMERCE</h3>
                     </div>
-                    <img src={FotoSlide} className="ftoSlide" />
+                    <img src={"/assets/remeraSlide.png"} className="ftoSlide" />
                     <div className="text-center contTextNew">
                         <h4>NEW ARRIVALS</h4>
                         <p>100% Algodon</p>
