@@ -9,10 +9,9 @@ const CartContext = ({children}) => {
     const [precios, setPrecios] = useState(0)
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [precioDelItem, setPrecioDelItem] = useState(0)
-    
+
     const addItem = (item, precio) =>{
         const index = carrito.findIndex(prod =>prod.id === item.id)
-        console.log(index)
         if(index > -1){
             let cantidadVieja = carrito[index].cantidad
             carrito[index].cantidad = cantidadVieja + 1
@@ -39,7 +38,7 @@ const CartContext = ({children}) => {
     }
 
     return ( 
-        <MiContexto.Provider value={{carrito, precios, cantidadTotal, precioDelItem, addItem, remove, clear}}>
+        <MiContexto.Provider value={{carrito, precios, cantidadTotal, precioDelItem, addItem, remove, clear, setCarrito}}>
             {children}
         </MiContexto.Provider>
      );
