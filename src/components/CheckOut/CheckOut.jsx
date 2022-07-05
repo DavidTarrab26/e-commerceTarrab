@@ -15,6 +15,7 @@ const CheckOut = () => {
     const [cp, setCp] = useState("")
     const [finalizada, setFinalizada] = useState(false)
     const [formIncompleto, setFormIncompleto] = useState (false)
+    const [nID, setNID] = useState(undefined)
 
     const db = getFirestore()
     const orderCollection = collection(db, "orders")
@@ -28,7 +29,7 @@ const CheckOut = () => {
                 items: carrito,
                 total: precios
             }
-            addDoc(orderCollection, order).then(({id})=>console.log(id))
+            addDoc(orderCollection, order).then(({id})=>setNID(id))
             setCarrito([])
             setCantidadTotal(0)
             setPrecios(0)
@@ -43,6 +44,7 @@ const CheckOut = () => {
                 finalizada ? 
                 <div className="text-center mt-4">
                     <h1>Compra realizada con exito</h1>
+                    <h4>Su orden de compra es: {nID}</h4>
                     <p>En instantes le llegara un mail con mas informacion, Muchas Gracias!</p>
                     <Link to={"/"}><button className="btn btn-dark">volver al home</button></Link>
                 </div>
