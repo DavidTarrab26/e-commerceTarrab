@@ -38,7 +38,7 @@ const CartContext = ({children}) => {
     }
 
     return ( 
-        <MiContexto.Provider value={{carrito, precios, cantidadTotal, precioDelItem, addItem, remove, clear, setCarrito, setPrecios}}>
+        <MiContexto.Provider value={{carrito, precios, cantidadTotal, precioDelItem, addItem, remove, clear, setCarrito, setPrecios, setCantidadTotal}}>
             {children}
         </MiContexto.Provider>
      );

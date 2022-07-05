@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 const CheckOut = () => {
     
-    const {carrito, setCarrito, precios, setPrecios} = useContext(MiContexto)
+    const {carrito, setCarrito, precios, setPrecios, setCantidadTotal} = useContext(MiContexto)
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
     const [email, setEmail] = useState("")
@@ -30,6 +30,7 @@ const CheckOut = () => {
             }
             addDoc(orderCollection, order).then(({id})=>console.log(id))
             setCarrito([])
+            setCantidadTotal(0)
             setPrecios(0)
             setFinalizada(true)
             setFormIncompleto(false)
@@ -40,7 +41,7 @@ const CheckOut = () => {
         <div>
             {
                 finalizada ? 
-                <div>
+                <div className="text-center mt-4">
                     <h1>Compra realizada con exito</h1>
                     <p>En instantes le llegara un mail con mas informacion, Muchas Gracias!</p>
                     <Link to={"/"}><button className="btn btn-dark">volver al home</button></Link>
