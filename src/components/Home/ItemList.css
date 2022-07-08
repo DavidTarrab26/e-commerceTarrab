@@ -1,20 +1,16 @@
 .slide{
-    height: 520px;
+    height: 600px;
     background-color: rgb(227, 227, 230);
     margin-bottom: 100px;
 }
 .textSlide{
-    font-size: 70px;
-
+    font-size: 320%;
 }
 .contTextSlide{
-    margin-top: 150px;
-}
-.ftoSlide{
-    height: 520px;
+    margin-top: 15%;
 }
 .contTextNew{
-    margin-top: 150px;
+    margin-top: 15%;
 }
 .titleCate{
     text-transform: uppercase;
@@ -30,4 +26,36 @@
     width: 1200px;
     margin-bottom: 100px;
     border-bottom: 4px solid black ;
+}
+@media (max-Width: 1280px) {
+    .slide{
+        height: 400px;
+        background-color: rgb(227, 227, 230);
+        margin-bottom: 100px;
+    }
+    .ftoSlide{
+        height: 400px;
+    }
+}
+@media (max-Width: 900px) {
+    .slide{
+        height: 350px;
+        background-color: rgb(227, 227, 230);
+        margin-bottom: 100px;
+    }
+    .ftoSlide{
+        height: 350px;
+    }
+    .textSlide{
+        font-size: 250%;
+    }
+    .titleProd{
+        font-size: 50px;
+        width: 1200px;
+        margin-bottom: 100px;
+        border-bottom: 4px solid black ;
+    }
+    .contTextNew{
+        display: none;
+    }
 }

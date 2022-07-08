@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
     const [itemElegido, setItemElegido] = useState([])
-    const [itemFiltrado, setItemFiltrado] = useState([])
+    /* const [itemFiltrado, setItemFiltrado] = useState([]) */
 
 
     useEffect(()=>{
@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
     
     return ( 
         <div>
-           <ItemDetail itemElegido ={itemElegido} itemFiltrado={itemFiltrado} loading={loading} />
+           <ItemDetail itemElegido ={itemElegido} loading={loading} />
         </div>
      );
 }
