@@ -59,3 +59,13 @@
         display: none;
     }
 }
+@media (max-Width: 720px) {
+    .slide{
+        height: 300px;
+        background-color: rgb(227, 227, 230);
+        margin-bottom: 100px;
+    }
+    .ftoSlide{
+        display: none;
+    }
+}
