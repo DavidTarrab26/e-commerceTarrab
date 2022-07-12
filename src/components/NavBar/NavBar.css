@@ -16,3 +16,37 @@
 .nav{
     background-color: rgb(245, 244, 245);
 }
+.contText{
+    text-align: center;
+}
+.textNav{
+    font-size: 25px;
+    border-bottom: solid black 1px;
+}
+.boton{
+    font-size: 25px;
+    border-bottom: solid black 1px;
+    color: black;
+}
+
+@media (min-Width: 800px) {
+    .boton{
+        color: white !important;
+        background-color: black;
+        border-radius: 10px;
+        font-size: 15px !important;
+        padding: 10px 10px;
+    }
+    .textNav {
+        font-size: 20px;
+        border-bottom: 0px;
+    }
+    .contText{
+        display: flex;
+        justify-content: end;
+    }
+    .contLiNormal{
+        display: flex;
+        justify-content: center;
+    }
+}
