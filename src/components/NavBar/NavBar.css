@@ -18,13 +18,14 @@
 }
 .contText{
     text-align: center;
+    margin-left: 23%;
 }
 .textNav{
-    font-size: 25px;
+    font-size: 25px !important;
     border-bottom: solid black 1px;
 }
 .boton{
-    font-size: 25px;
+    font-size: 25px !important;
     border-bottom: solid black 1px;
     color: black;
 }

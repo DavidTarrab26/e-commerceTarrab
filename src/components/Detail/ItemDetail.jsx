@@ -22,7 +22,7 @@ const ItemDetail = ({itemElegido, itemFiltrado, loading}) => {
                 </div>
                 :
                 <div>
-                    <div className="d-flex justify-content-center contenedorDetail">
+                    <div className="contenedorDetail">
                         <img src={itemElegido.img} className="imgDetail shadow" alt={itemElegido.title}/>
                         <div className="conTextDetail shadow">
                             <h2 className="mt-5">{itemElegido.title}</h2>
@@ -31,11 +31,12 @@ const ItemDetail = ({itemElegido, itemFiltrado, loading}) => {
                             <div className="d-flex align-items-end precioDetail">
                                 <h5 >${itemElegido.precio}</h5>
                             </div>
-                            <div className="d-flex justify-content-center ">
-                                <button type="button" className="btn btn-dark btnComprar">Comprar Ahora</button>
-                                <button type="button" className="btn btn-outline-dark" onClick={()=>addItem({...itemElegido, cantidad:1}, itemElegido.precio)}>Agregar al carrito</button>
+                            <div>
+                                <div className="contBotonDetail">
+                                    <button type="button" className="btn btn-outline-dark" onClick={()=>addItem({...itemElegido, cantidad:1}, itemElegido.precio)}>Agregar al carrito</button>
+                                </div>
+                                <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                             </div>
-                            <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                         </div>
                     </div>
                     {/* <div className="container">
