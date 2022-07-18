@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
     const [itemElegido, setItemElegido] = useState([])
-    /* const [itemFiltrado, setItemFiltrado] = useState([]) */
 
 
     useEffect(()=>{
@@ -29,6 +28,7 @@ const ItemDetailContainer = () => {
         .finally(()=>{
             setLoading(false)
         })
+        
     },[id]);
     
     return ( 

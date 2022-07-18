@@ -10,18 +10,15 @@ const CartContext = ({children}) => {
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [precioDelItem, setPrecioDelItem] = useState(0)
 
-    const addItem = (item, precio) =>{
+    const addItem = (item) =>{
         const index = carrito.findIndex(prod =>prod.id === item.id)
         if(index > -1){
             let cantidadVieja = carrito[index].cantidad
-            carrito[index].cantidad = cantidadVieja + 1
+            carrito[index].cantidad = cantidadVieja + item.cantidad
             setCarrito([...carrito])
         } else{
-            setCarrito([item, ...carrito])
+            setCarrito([...carrito, item])
         }
-        setCantidadTotal(cantidadTotal + 1)
-        setPrecios(precio + precios)
-        alert("se agrego el item al carrito")
     }
 
     const remove = (precio, id, cantidad) =>{

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../../context/CartContext";
-import ItemCount from "../ItemCount";
 import "./Cart.css";
 
 const Cart = () => {
@@ -18,9 +17,10 @@ const Cart = () => {
                                 <div className="card-body bodyCard">
                                     <h5 className="card-title">{producto.title}</h5>
                                     <h5 className="mt-2">${producto.precio}</h5>
+                                    <h5>{producto.cantidad}</h5>
+                                    <h5>{producto.cantidad * producto.precio}</h5>
                                 </div>
                                 <div>
-                                    <ItemCount stock={producto.stock} cantidad={producto.cantidad}/>
                                     <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.precio, producto.id, producto.cantidad)}>Eliminar Producto</button>
                                 </div>
                             </div>

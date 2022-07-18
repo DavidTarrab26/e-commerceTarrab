@@ -1,13 +1,38 @@
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import React from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../../context/CartContext";
+import ItemCount from "../ItemCount";
 import "./ItemDetail.css"
 
 
-const ItemDetail = ({itemElegido, itemFiltrado, loading}) => {
+const ItemDetail = ({itemElegido, loading}) => {
     const {addItem} = useContext(MiContexto)
+    const [itemSugerido, setItemSugerido] = useState([])
+
+    const onAdd = (count) =>{
+        addItem({...itemElegido, cantidad: count})
+        console.log({...itemElegido, cantidad: count})
+    }
+
+    useEffect(()=>{
+        const db = getFirestore()
+        const category = itemElegido.category
+
+        const productosCollection = collection(db, 'productos')
+        if(category){
+            const q = query(productosCollection, where('category', '==', category))
+            getDocs(q).then(snapshot=>{
+                setItemSugerido(snapshot.docs.map(doc=>({...doc.data(), id: doc.id})))
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+        }
+    },[itemElegido])
 
     return ( 
         <div>
@@ -33,33 +58,33 @@ const ItemDetail = ({itemElegido, itemFiltrado, loading}) => {
                             </div>
                             <div>
                                 <div className="contBotonDetail">
-                                    <button type="button" className="btn btn-outline-dark" onClick={()=>addItem({...itemElegido, cantidad:1}, itemElegido.precio)}>Agregar al carrito</button>
+                                    <ItemCount stock={itemElegido.stock} onAdd={onAdd} />
                                 </div>
                                 <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                             </div>
                         </div>
                     </div>
-                    {/* <div className="container">
+                    <div className="container">
                         <div className="sugerencia d-flex justify-content-center">
                             <h3>Quienes vieron este producto tambien compraron</h3>
                         </div>
                         <div className="d-flex flex-wrap justify-content-center">
-                            {itemFiltrado.map(itemF => (
+                            {itemSugerido?.map(itemF => (
                                 <div className="card m-3 shadow cardItemF" key={itemF.id}>
-                                    <img src={require(`../../assets/${itemF.img}`)} className="card-img-top cardImgF" alt={itemF.title}/>
+                                    <img src={itemF.img} className="card-img-top cardImgF" alt={itemF.title}/>
                                     <div className="card-body">
                                         <div className="titleSugerencia">
                                             <h5 className="card-title">{itemF.title}</h5>
                                             <p className="card-text">{itemF.detalle}</p>
                                         </div>
                                         <h6>${itemF.precio}</h6>
-                                        <Link to={`/detalle/${itemF.id}`}><button className="btn btn-dark" onClick={()=>cambiarLoading()}>Ver mas</button></Link>
+                                        <Link to={`/detalle/${itemF.id}`}><button className="btn btn-dark">Ver mas</button></Link>
                                     </div>
                                 </div>
                             ))}
                             
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             }
         </div>
