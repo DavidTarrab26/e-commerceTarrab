@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form"
 
 const CheckOut = () => {
 
-    const {carrito, setCarrito, precios, setPrecios, setCantidadTotal} = useContext(MiContexto)
+    const {carrito, setCarrito, precioTotal, toastFinal} = useContext(MiContexto)
     const { register, formState: { errors } ,handleSubmit } = useForm() 
     const [finalizada, setFinalizada] = useState(false)
     const [nID, setNID] = useState(undefined)
@@ -20,13 +20,12 @@ const CheckOut = () => {
         const order = {
             buyer,
             items: carrito,
-            total: precios
+            total: precioTotal()
         }
         addDoc(orderCollection, order).then(({id})=>setNID(id))
-            setCarrito([])
-            setCantidadTotal(0)
-            setPrecios(0)
-            setFinalizada(true)
+        setCarrito([])
+        setFinalizada(true)
+        toastFinal()
     }
 
     return ( 

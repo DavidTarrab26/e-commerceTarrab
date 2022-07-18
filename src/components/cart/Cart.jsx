@@ -4,7 +4,7 @@ import { MiContexto } from "../../context/CartContext";
 import "./Cart.css";
 
 const Cart = () => {
-    const {carrito, precios, remove, clear} = useContext(MiContexto)
+    const {carrito, precioTotal, remove, clear} = useContext(MiContexto)
     return ( 
         <>
             {carrito.length > 0 ?
@@ -17,8 +17,10 @@ const Cart = () => {
                                 <div className="card-body bodyCard">
                                     <h5 className="card-title">{producto.title}</h5>
                                     <h5 className="mt-2">${producto.precio}</h5>
+                                    <h6>cantidad:</h6>
                                     <h5>{producto.cantidad}</h5>
-                                    <h5>{producto.cantidad * producto.precio}</h5>
+                                    <h6>precio total:</h6>
+                                    <h5>${producto.cantidad * producto.precio}</h5>
                                 </div>
                                 <div>
                                     <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.precio, producto.id, producto.cantidad)}>Eliminar Producto</button>
@@ -28,7 +30,7 @@ const Cart = () => {
                     ))}
                 </div>
                 <div className="text-center"> 
-                    <h5>Total: ${precios}</h5>
+                    <h5>Total: ${precioTotal()}</h5>
                     <Link to={"/checkout"}><button className="btn btn-success">Finalizar Comprar</button></Link>
                     <button type="button" className="btn btn-danger" onClick={()=>clear()}>Eliminar Todo!</button>
                 </div>

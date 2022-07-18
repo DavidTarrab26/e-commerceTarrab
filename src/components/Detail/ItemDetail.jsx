@@ -12,11 +12,17 @@ import "./ItemDetail.css"
 const ItemDetail = ({itemElegido, loading}) => {
     const {addItem} = useContext(MiContexto)
     const [itemSugerido, setItemSugerido] = useState([])
+    const [loadingMas, setLoadingMas] = useState(false)
 
     const onAdd = (count) =>{
         addItem({...itemElegido, cantidad: count})
-        console.log({...itemElegido, cantidad: count})
     }
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setLoadingMas(false)
+        },1000)
+    },[loadingMas])
 
     useEffect(()=>{
         const db = getFirestore()
@@ -36,7 +42,7 @@ const ItemDetail = ({itemElegido, loading}) => {
 
     return ( 
         <div>
-            {loading == true ?
+            {loading || loadingMas == true ?
                 <div>
                     <div className="d-flex justify-content-center mt-5">
                         <div className="spinner-border" role="status">
@@ -60,7 +66,7 @@ const ItemDetail = ({itemElegido, loading}) => {
                                 <div className="contBotonDetail">
                                     <ItemCount stock={itemElegido.stock} onAdd={onAdd} />
                                 </div>
-                                <p className="mt-5 d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
+                                <p className="d-flex justify-content-end stockDetail">stock disponible :{itemElegido.stock}</p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +84,7 @@ const ItemDetail = ({itemElegido, loading}) => {
                                             <p className="card-text">{itemF.detalle}</p>
                                         </div>
                                         <h6>${itemF.precio}</h6>
-                                        <Link to={`/detalle/${itemF.id}`}><button className="btn btn-dark">Ver mas</button></Link>
+                                        <Link to={`/detalle/${itemF.id}`}><button className="btn btn-dark" onClick={()=>setLoadingMas(true)}>Ver mas</button></Link>
                                     </div>
                                 </div>
                             ))}

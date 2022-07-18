@@ -8,7 +8,7 @@ const CartWidget = () => {
     return ( 
         <div className="d-flex cart-text">
             <i className="bi bi-cart"></i>
-            <p>{cantidadTotal}</p>
+            <p>{cantidadTotal()}</p>
         </div>
      );
 }
