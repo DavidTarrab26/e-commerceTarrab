@@ -31,7 +31,7 @@ const ItemCount = ({stock, onAdd}) => {
                 </div>
             </div>
             <div className="d-flex justify-content-center">
-                <button className="btn btn-success mt-3" onClick={()=>{onAdd(count)}}>Agregar cantidad</button>
+                <button className="btn btn-dark mt-3" onClick={()=>{onAdd(count)}}>Agregar cantidad</button>
             </div>
         </>
      );

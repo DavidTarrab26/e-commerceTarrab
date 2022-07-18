@@ -17,9 +17,6 @@
 .stockDetail{
     margin-right: 5px;
 }
-.btnComprar{
-    margin-right: 10px;
-}
 .cardItemF{
     width: 250px;
 }
@@ -34,22 +31,31 @@
     height: 100px;
 }
 .contBotonDetail{
-    width: 200px;
+    width: 150px;
 }
 @media (max-Width: 800px){
     .contenedorDetail{
         display: block;
         margin-top: 5%;
         margin-left: 30%;
-        height: 450px;
+        height: 800px;
     }
 }
 @media (max-Width: 480px){
+    .contenedorDetail{
+        display: block;
+        margin-top: 5%;
+        margin-left: 10%;
+        height: 800px;
+    }
     .imgDetail{
+        width: 250px;
+    }
+    .cardImgF{
         width: 200px;
     }
     .conTextDetail{
-        width: 170px;
+        width: 250px;
         padding-left: 30px;
     }
 }

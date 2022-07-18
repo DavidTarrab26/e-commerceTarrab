@@ -50,4 +50,8 @@
         display: flex;
         justify-content: center;
     }
+    .contBotones{
+        width: 70%;
+        margin-right: 30%;
+    }
 }
