@@ -7,11 +7,12 @@ export const MiContexto = createContext({})
 
 const CartContext = ({children}) => {
 
-    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) ??[])
+    const [carrito, setCarrito] = useState([])
+    console.log(carrito)
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         localStorage.setItem('carrito', JSON.stringify(carrito))
-    },[carrito])
+    },[carrito]) */
 
     const addItem = (item) =>{
         const index = carrito.findIndex(prod =>prod.id === item.id)
@@ -36,7 +37,7 @@ const CartContext = ({children}) => {
     
     
     const remove = (id) =>{
-        setCarrito(carrito.filter(car=>car.id !== id))
+        setCarrito(carrito.filter(prod=> prod.id !== id))
         toast.success("Se elimino el producto de tu carrito")
     }
 

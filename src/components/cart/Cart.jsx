@@ -23,7 +23,7 @@ const Cart = () => {
                                     <h5>${producto.cantidad * producto.precio}</h5>
                                 </div>
                                 <div>
-                                    <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.precio, producto.id, producto.cantidad)}>Eliminar Producto</button>
+                                    <button type="button" className="btn btn-danger m-4" onClick={()=>remove(producto.id)}>Eliminar Producto</button>
                                 </div>
                             </div>
                         </div>
