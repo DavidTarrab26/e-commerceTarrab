@@ -11,7 +11,7 @@ Este proyecto fue creado con React JS en un desafio de CoderHouse camada 31205
 
 ## Deploy 
 
-Este proyecto esta deployed en FireBase Hosting, podes visualizarlo haciendo [click aqui](link)
+Este proyecto esta deployed en FireBase Hosting, podes visualizarlo haciendo [click aqui](https://tarrabecommerce.web.app)
 
 ## Librerias usadas
 
