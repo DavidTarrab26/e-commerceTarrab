@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Proyecto e-commerce Tarrab con React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con React JS en un desafio de CoderHouse camada 31205
 
-## Available Scripts
+## Esta es la forma de correr este proyecto
 
-In the project directory, you can run:
-
+1. Descarga el proyecto de este repositorio.
+2. Corre el comando:
 ### `npm start`
+3. Abrí [http://localhost:3000](http://localhost:3000) para visualizarlo en tu navegador.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deploy 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este proyecto esta deployed en FireBase Hosting, podes visualizarlo haciendo [click aqui](link)
 
-### `npm test`
+## Librerias usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/) Es un marco de trabajo para crear sitios adaptables.
 
-### `npm run build`
+ $ npm install bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Bootstrap icons](https://icons.getbootstrap.com/) Es una libreria utilizada para añadir iconos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ $ npm i bootstrap-icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[FireBase](https://firebase.google.com/) Plataforma utilizada como base de datos.
 
-### `npm run eject`
+ $ npm install firebase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[React Hook Form](https://react-hook-form.com/get-started) Libreria para hacer formularios y validarlos de forma sencilla.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ $ npm install react-hook-form 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[React Router Dom](https://www.npmjs.com/package/react-router-dom) Enrutamiento dinamico y sencillo.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ $ npm i react-router-dom
 
-## Learn More
+[React Hot Toast](https://react-hot-toast.com/docs) Libreria para agregar notificaciones esteticas.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ $ npm install react-hot-toast
