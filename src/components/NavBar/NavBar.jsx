@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../../context/CartContext";
-import logo from '../../logo.svg';
+import logo from '../../fotologojpg.jpg';
 import CartWidget from './CartWidget';
 import './NavBar.css'
 
@@ -15,7 +15,6 @@ const NavBar = () => {
             <div className="container-fluid">
                 <div>
                     <Link to={'/'}><img src={logo} alt="logo" className= 'logoNav' /></Link>
-                    <h2 className= 'textLogo' >Ecommerce</h2>
                 </div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i className="bi bi-list"></i>
